@@ -1,0 +1,18 @@
+/* ===================== Global ===================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Kumbh Sana', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+  background-color: black;
+  /* background: linear-gradient(90deg, #5c3b1e, white, #5c3b1e); */
+}
+
+/* Font awesome spacing */
+.fa-gem {
+    margin-right: 0.5rem;
+}

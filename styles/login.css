@@ -1,0 +1,147 @@
+/* Modal Background */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+
+/* Modal Box */
+.modal-content {
+  position: relative;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  text-align: left;
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Inputs */
+.modal-content input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 15px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Password wrapper */
+.password-wrapper { position: relative; }
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+/* Buttons */
+.signup-btn {
+  font-size: 15px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(135deg, #5c3b1e, #8b5a2b);
+}
+
+.signup-btn:hover {
+  background: linear-gradient(135deg, #8b5a2b, #5c3b1e);
+}
+
+
+.password-wrapper {
+  position: relative;
+}
+.password-wrapper input {
+  width: 100%;
+  padding-right: 2.5rem;
+}
+.password-wrapper .toggle-password {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Profile dropdown */
+.navbar_profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-right: 1.5rem;
+}
+
+.navbar_username {
+  font-size: 1.2rem;
+  color: gray;
+}
+.profile-btn {
+  display: flex;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 2.0em;
+  color: gray;
+}
+
+.profile-btn:hover {
+  color: white;
+}
+.profile-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 110%;
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 0.75rem 1rem;
+  min-width: 150px;
+  z-index: 10;
+}
+.profile-menu.show {
+  display: block;
+}
+.profile-menu p {
+  margin: 0.25rem 0 0.5rem;
+  font-weight: bold;
+}
+.profile-menu button {
+  background: #e33;
+  color: white;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+}
+
+

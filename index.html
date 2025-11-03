@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Eternal Key UF — Shop</title>
+
+  <!-- Your CSS file(s) (change filename(s) if needed) -->
+  <link rel="stylesheet" href="styles/body.css">
+  <link rel="stylesheet" href="styles/login.css">
+  <link rel="stylesheet" href="styles/products.css">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/swiper.css">
+
+  <!-- Ionicons (used for cart etc.) -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar_container">
+      <div class="logo_container">
+        <div class="navbar_logo">
+          <img src="images/Eternal_Key_UF_logo_cropped.png" alt="Eternal Key UF logo" />
+        </div>
+      </div>
+
+      <div class="navbar_toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+      <ul class="navbar_menu">
+        <li class="navbar_item"><a href="" class="navbar_links">Home</a></li>
+        <li class="navbar_item"><a href="#products" class="navbar_links">Products</a></li>
+        <li class="navbar_item"><a href="" class="navbar_links">About</a></li>
+        <li class="navbar_item"><a href="" class="navbar_links">Contact</a></li>
+
+        <li class="navbar_item" id="signinNavItem">
+          <div class="nav-buttons">
+            <button id="authButtonLogIn" class="nav-btn login_button">Log In</button>
+            <button id="authButtonSignUp" class="nav-btn signup_button">Sign Up</button>
+          </div>
+        </li>
+
+
+                <!-- Profile section OUTSIDE menu -->
+        <div class="navbar_profile" id="navbarProfile" style="display:none;">
+          <span class="navbar_username" id="navbarUsername"></span>
+          <button id="profileButton" class="profile-btn">
+            <ion-icon name="person-circle-outline"></ion-icon>
+          </button>
+          <div id="profileMenu" class="profile-menu">
+            <p id="profileUsername"></p>
+            <button id="logoutBtn">Log Out</button>
+          </div>
+        </div>
+      </ul>
+      
+      <div class="outside_navbar">
+        <li class="navbar_cart">
+          <a href="#" class="cart"><ion-icon name="cart-outline"></ion-icon></a>
+        </li>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- MAIN / HERO SWIPER (your big preview swiper) -->
+  <section class="hero">
+    <div class="swiper mainSwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="images/pictures/image1.png" alt="hero 1"></div>
+        <div class="swiper-slide"><img src="images/pictures/image1.png" alt="hero 2"></div>
+        <div class="swiper-slide"><img src="images/pictures/image1.png" alt="hero 3"></div>
+        <div class="swiper-slide"><img src="images/pictures/image1.png" alt="hero 4"></div>
+        <div class="swiper-slide"><img src="images/pictures/image1.png" alt="hero 5"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS (6 cards: 3 + 3) -->
+  <section" class="product_container">
+    <div id="products"class="products">
+      <!-- Repeated 6 times - all using image1 (Images1 as you asked) -->
+      <article class="product-card">
+        <img src="images/pictures/image1.png" alt="Product 1">
+        <h3>Leather Keychain</h3>
+        <p class="desc">Handcrafted from cow leather.</p>
+        <p class="price">149 kr</p>
+        <button class="buy-btn">Buy Now</button>
+      </article>
+
+      <article class="product-card">
+        <img src="images/pictures/image1.png" alt="Product 2">
+        <h3>Wooden Bracelet</h3>
+        <p class="desc">Oak and leather details.</p>
+        <p class="price">199 kr</p>
+        <button class="buy-btn">Buy Now</button>
+      </article>
+
+      <article class="product-card">
+        <img src="images/pictures/image1.png" alt="Product 3">
+        <h3>Leather Tag</h3>
+        <p class="desc">Stamped with our logo.</p>
+        <p class="price">89 kr</p>
+        <button class="buy-btn">Buy Now</button>
+      </article>
+
+      <article class="product-card">
+        <img src="images/pictures/image1.png" alt="Product 4">
+        <h3>Leather Keychain</h3>
+        <p class="desc">Handcrafted from cow leather.</p>
+        <p class="price">149 kr</p>
+        <button class="buy-btn">Buy Now</button>
+      </article>
+
+      <article class="product-card">
+        <img src="images/pictures/image1.png" alt="Product 5">
+        <h3>Wooden Bracelet</h3>
+        <p class="desc">Oak and leather details.</p>
+        <p class="price">199 kr</p>
+        <button class="buy-btn">Buy Now</button>
+      </article>
+
+      <article class="product-card">
+        <img src="images/pictures/image1.png" alt="Product 6">
+        <h3>Leather Tag</h3>
+        <p class="desc">Stamped with our logo.</p>
+        <p class="price">89 kr</p>
+        <button class="buy-btn">Buy Now</button>
+      </article>
+    </div>
+  </section>
+
+
+
+  <!-- SIGNUP Modal -->
+  <div id="signupModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Create Account</h2>
+      <form id="signupForm">
+        <label for="signupUsername">Username</label>
+        <input id="signupUsername" type="text" required placeholder="Your username" />
+
+        <label for="email">Email</label>
+        <input id="email" type="email" required placeholder="you@example.com" />
+
+        <label for="password">Password</label>
+        <div class="password-wrapper">
+          <input id="password" type="password" required placeholder="At least 6 characters" />
+          <button type="button" class="toggle-password">
+            <ion-icon name="eye-outline"></ion-icon>
+          </button>
+        </div>
+
+        <button type="submit" class="signup-btn">Sign Up</button>
+        <p class="switch-text">Already have an account? <a href="#" id="loginLink">Log in</a></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- LOGIN Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Login</h2>
+      <form id="loginForm">
+        <label for="loginEmail">Email</label>
+        <input id="loginEmail" type="email" required placeholder="you@example.com" />
+
+        <label for="loginPassword">Password</label>
+        <div class="password-wrapper">
+          <input id="loginPassword" type="password" required placeholder="Your password" />
+          <button type="button" class="toggle-password">
+            <ion-icon name="eye-outline"></ion-icon>
+          </button>
+        </div>
+
+        <button type="submit" class="signup-btn">Log In</button>
+        <p class="switch-text">Don't have an account? <a href="#" id="signupLink">Sign up</a></p>
+      </form>
+    </div>
+  </div>
+
+
+
+
+  <!-- PRODUCT POPUP Modal (clean swiper) -->
+  <div id="productModal" class="modal">
+    <div class="modal-content product-popup">
+      <span class="close" onclick="closeProductModal()">&times;</span>
+      <div class="popup-body">
+        <div class="popup-image">
+          <div class="swiper productSwiper">
+            <div class="swiper-wrapper"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+        <div class="popup-info">
+          <h2 id="popupTitle">Product Title</h2>
+          <p class="popup-price" id="popupPrice">Price</p>
+          <p class="popup-material" id="popupMaterial">Material</p>
+          <p class="popup-desc" id="popupDesc">Description goes here.</p>
+          <button class="buy-btn">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- Your app JS file (the JS you provided should be saved as app.js) -->
+  <script src="scripts/app.js"></script>
+  <script src="scripts/supabase.js"></script>
+
+
+  <!-- Small inline fallbacks/initializers to ensure expected elements exist (optional, can remove if app.js handles all) -->
+  <script>
+    // ensure mobile menu element exists (your app.js expects #mobile-menu)
+    if (!document.querySelector('#mobile-menu')) {
+      console.warn('#mobile-menu missing');
+    }
+  </script>
+</body>
+</html>
