@@ -152,8 +152,8 @@
 .popup-material { color: #777; margin-bottom: 0.8rem; }
 .popup-desc { color: #555; font-size: 0.95rem; margin-bottom: 1.2rem; }
 
-.buy-btn { background: #111; color: #fff; border: none; border-radius: 6px; padding: 0.8rem 1.4rem; cursor: pointer; }
-.buy-btn:hover { background: #333; }
+.buy-btn { background: linear-gradient(90deg, #5c3b1e, #8b5a2b, #5c3b1e); color: #fff; border: none; border-radius: 6px; padding: 0.8rem 1.4rem; cursor: pointer; }
+.buy-btn:hover { background: #5c3b1e; }
 
 @keyframes fadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
 
