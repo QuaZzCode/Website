@@ -1,0 +1,143 @@
+/* === CART NAVBAR STYLING === */
+.cart-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+}
+
+/* icon + arrow */
+.cart-icon {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 2.2rem;
+  color: white;
+  position: relative;
+  flex-direction: column;
+}
+
+.cart-arrow {
+  font-size: 1.2rem;
+  margin-left: 4px;
+  transition: transform 0.3s ease;
+}
+
+/* quantity badge */
+#cartCount {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 0.8rem;
+  border-radius: 50%;
+  padding: 2px 6px;
+}
+
+/* === CART PANEL === */
+.cart-panel {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  margin-right: -10vh;
+  width: 340px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  padding: 15px;
+  display: none;
+  flex-direction: column;
+  height: 70vh;
+  max-height: 70vh;
+  overflow-y: auto;
+  z-index: 9999;
+}
+
+.cart-panel.show {
+  display: flex;
+  animation: slideDown 0.25s ease forwards;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* === CART ITEM STYLING === */
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding: 8px;
+  background: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.cart-item img {
+  width: 40px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cart-item-name {
+  flex: 1;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* quantity and price */
+.cart-quantity {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cart-quantity button {
+  background: #ddd;
+  border: none;
+  border-radius: 4px;
+  padding: 3px 7px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.cart-price {
+  min-width: 60px;
+  text-align: right;
+}
+
+/* === FOOTER === */
+.cart-footer {
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.checkout-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #5c3b1e, #8b5a2b);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.checkout-btn:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(135deg,#8b5a2b, #5c3b1e);
+  /* background: #5c3b1e; */
+}

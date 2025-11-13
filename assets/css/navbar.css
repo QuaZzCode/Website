@@ -87,23 +87,6 @@
     align-items: center;
     width: 100%;
 }
-.outside_navbar {
-    display: flex;
-    justify-self: end;
-    justify-content: space-between;
-    align-items: center;
-    width: auto;
-    height: 8vh;
-    
-}
-.navbar_cart {
-    list-style-type: none;
-}
-/* Cart icon */
-.cart ion-icon {
-    font-size: 40px;
-    color: white;
-}
 
 /* === LOGIN / SIGNUP BUTTONS === */
 .nav-buttons {
@@ -151,7 +134,9 @@
 
 .signup_button:hover {
     background: linear-gradient(135deg, #8b5a2b, #5c3b1e);
+    transition: background-color 2s ease-in;
 }
+
 
 /* Responsive: stack only on small phones */
 @media (max-width: 1000px) {

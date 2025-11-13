@@ -1,0 +1,43 @@
+/* ===================== Global ===================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Kumbh Sana', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+  background-color: #242424;
+  background-image: url(/images/backgrounds/christmas_PNG17215.png);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: 55%;
+  background-position-y: 5vh;
+}
+
+.corner-image {
+  position: fixed; 
+  bottom: 0; 
+  /* width: 100px;  */
+  height: 23vh;
+  z-index: 1000;  
+  pointer-events: none; 
+}
+
+/* Left corner */
+.corner-image.left {
+  left: 0;
+  margin: 10px;  
+}
+
+/* Right corner */
+.corner-image.right {
+  right: 0;
+  margin: 10px;
+}
+
+/* Font awesome spacing */
+.fa-gem {
+    margin-right: 0.5rem;
+}

@@ -6,20 +6,25 @@
   <title>Eternal Key UF — Shop</title>
 
   <!-- Your CSS file(s) (change filename(s) if needed) -->
-  <link rel="stylesheet" href="styles/body.css">
-  <link rel="stylesheet" href="styles/login.css">
-  <link rel="stylesheet" href="styles/products.css">
-  <link rel="stylesheet" href="styles/styles.css">
-  <link rel="stylesheet" href="styles/swiper.css">
+  <link rel="stylesheet" href="assets/css/body.css">
+  <link rel="stylesheet" href="assets/css/cart.css">
+  <link rel="stylesheet" href="assets/css/login.css">
+  <link rel="stylesheet" href="assets/css/navbar.css">
+  <link rel="stylesheet" href="assets/css/products.css">
+  <link rel="stylesheet" href="assets/css/swiper.css">
 
   <!-- Ionicons (used for cart etc.) -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
   <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
 </head>
 <body>
+
+  <img src="images/backgrounds/corner_image_reversed.png" alt="Left Image" class="corner-image left">
+  <img src="images/backgrounds/corner_image.png" alt="Right Image" class="corner-image right">
+
 
   <!-- NAVBAR -->
   <nav class="navbar">
@@ -61,16 +66,34 @@
             <button id="logoutBtn">Log Out</button>
           </div>
         </div>
-      </ul>
-      
-      <div class="outside_navbar">
-        <li class="navbar_cart">
-          <a href="#" class="cart"><ion-icon name="cart-outline"></ion-icon></a>
-        </li>
+
+      </li>
+    </ul>
+    <li class="navbar_item cart-wrapper">
+      <div class="cart-icon" id="cartIcon">
+        <ion-icon name="cart-outline"></ion-icon>
+        <ion-icon id="cartArrow" name="chevron-down-outline" class="cart-arrow"></ion-icon>
+        <span id="cartCount">0</span>
       </div>
 
+      <div id="cartPanel" class="cart-panel">
+        <h3>Your Cart</h3>
+        <div id="cartItems"></div>
+        <div class="cart-footer">
+          <div class="cart-total">
+            <span>Total:</span>
+            <span id="cartTotal">0 kr</span>
+          </div>
+          <button id="checkoutBtn" class="checkout-btn">Checkout</button>
+        </div>
+      </div>
     </div>
   </nav>
+
+
+
+
+
 
   <!-- MAIN / HERO SWIPER (your big preview swiper) -->
   <section class="hero">
@@ -88,59 +111,61 @@
     </div>
   </section>
 
-  <!-- PRODUCTS (6 cards: 3 + 3) -->
-  <section" class="product_container">
-    <div id="products"class="products">
-      <!-- Repeated 6 times - all using image1 (Images1 as you asked) -->
-      <article class="product-card">
-        <img src="images/pictures/image1.png" alt="Product 1">
-        <h3>Leather Keychain</h3>
-        <p class="desc">Handcrafted from cow leather.</p>
-        <p class="price">149 kr</p>
-        <button class="buy-btn">Buy Now</button>
-      </article>
+<!-- PRODUCTS -->
+<section class="product_container">
+  <div id="products" class="products">
 
-      <article class="product-card">
-        <img src="images/pictures/image1.png" alt="Product 2">
-        <h3>Wooden Bracelet</h3>
-        <p class="desc">Oak and leather details.</p>
-        <p class="price">199 kr</p>
-        <button class="buy-btn">Buy Now</button>
-      </article>
+    <article class="product-card" data-id="1">
+      <img src="images/pictures/image1.png" alt="Product 1">
+      <h3>Leather Keychain</h3>
+      <p class="desc">Handcrafted from cow leather.</p>
+      <p class="price">149 kr</p>
+      <button class="buy-btn">Add to cart</button>
+    </article>
 
-      <article class="product-card">
-        <img src="images/pictures/image1.png" alt="Product 3">
-        <h3>Leather Tag</h3>
-        <p class="desc">Stamped with our logo.</p>
-        <p class="price">89 kr</p>
-        <button class="buy-btn">Buy Now</button>
-      </article>
+    <article class="product-card" data-id="2">
+      <img src="images/pictures/image1.png" alt="Product 2">
+      <h3>Wooden Bracelet</h3>
+      <p class="desc">Oak and leather details.</p>
+      <p class="price">199 kr</p>
+      <button class="buy-btn">Add to cart</button>
+    </article>
 
-      <article class="product-card">
-        <img src="images/pictures/image1.png" alt="Product 4">
-        <h3>Leather Keychain</h3>
-        <p class="desc">Handcrafted from cow leather.</p>
-        <p class="price">149 kr</p>
-        <button class="buy-btn">Buy Now</button>
-      </article>
+    <article class="product-card" data-id="3">
+      <img src="images/pictures/image1.png" alt="Product 3">
+      <h3>Leather Tag</h3>
+      <p class="desc">Stamped with our logo.</p>
+      <p class="price">89 kr</p>
+      <button class="buy-btn">Add to cart</button>
+    </article>
 
-      <article class="product-card">
-        <img src="images/pictures/image1.png" alt="Product 5">
-        <h3>Wooden Bracelet</h3>
-        <p class="desc">Oak and leather details.</p>
-        <p class="price">199 kr</p>
-        <button class="buy-btn">Buy Now</button>
-      </article>
+    <article class="product-card" data-id="4">
+      <img src="images/pictures/image1.png" alt="Product 4">
+      <h3>Leather Wallet</h3>
+      <p class="desc">Premium cow leather.</p>
+      <p class="price">249 kr</p>
+      <button class="buy-btn">Add to cart</button>
+    </article>
 
-      <article class="product-card">
-        <img src="images/pictures/image1.png" alt="Product 6">
-        <h3>Leather Tag</h3>
-        <p class="desc">Stamped with our logo.</p>
-        <p class="price">89 kr</p>
-        <button class="buy-btn">Buy Now</button>
-      </article>
-    </div>
-  </section>
+    <article class="product-card" data-id="5">
+      <img src="images/pictures/image1.png" alt="Product 5">
+      <h3>Wooden Bracelet II</h3>
+      <p class="desc">Oak and leather details.</p>
+      <p class="price">199 kr</p>
+      <button class="buy-btn">Add to cart</button>
+    </article>
+
+    <article class="product-card" data-id="6">
+      <img src="images/pictures/image1.png" alt="Product 6">
+      <h3>Leather Tag II</h3>
+      <p class="desc">Stamped with our logo.</p>
+      <p class="price">89 kr</p>
+      <button class="buy-btn">Add to cart</button>
+    </article>
+
+  </div>
+</section>
+
 
 
 
@@ -220,13 +245,19 @@
     </div>
   </div>
 
+  
+
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
   <!-- Your app JS file (the JS you provided should be saved as app.js) -->
-  <script src="scripts/app.js"></script>
-  <script src="scripts/supabase.js"></script>
+  <script type="module" src="assets/js/main-swiper.js"></script>
+  <script type="module" src="assets/js/menu.js"></script>
+  <script type="module" src="assets/js/product-modal.js"></script>
+  <script type="module" src="assets/js/supabase-login.js"></script>
+  <script type="module" src="assets/js/supabase-cart.js"></script>
+  <script type="module" src="assets/js/supabase-config.js"></script>
 
 
   <!-- Small inline fallbacks/initializers to ensure expected elements exist (optional, can remove if app.js handles all) -->
