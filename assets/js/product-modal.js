@@ -42,16 +42,6 @@ document.querySelectorAll(".product-card").forEach((card, i) => {
       wrapper.appendChild(slide);
     });
 
-      // Prevent buy button from opening modal
-  document.querySelectorAll(".buy-btn").forEach(btn => {
-    btn.addEventListener("click", e => {
-      e.stopPropagation(); // 🔒 stop click from reaching the product card
-      const card = e.target.closest(".product-card");
-      const id = card.dataset.id;
-      addToCart(id); // Replace with your real add-to-cart logic
-    });
-  });
-
     if (productSwiper) productSwiper.destroy(true, true);
 
     productSwiper = new Swiper('.productSwiper', {

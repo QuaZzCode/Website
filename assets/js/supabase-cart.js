@@ -32,20 +32,20 @@ async function initCartUI() {
 
   document.getElementById("checkoutBtn").addEventListener("click", () => alert("Checkout feature coming soon!"));
 
-  document.addEventListener("click", async e => {
-    if (e.target.classList.contains("buy-btn")) {
-      e.stopPropagation();
-      const card = e.target.closest(".product-card");
-      const product = {
-        id: card.dataset.id,
-        name: card.querySelector("h3").textContent,
-        price: parseFloat(card.querySelector(".price").textContent.replace("kr", "").trim()),
-        image: card.querySelector("img").src,
-      };
-      await addToCart(product);
-    }
-  });
 }
+document.addEventListener("click", async e => {
+  if (e.target.classList.contains("buy-btn")) {
+    e.stopPropagation();
+    const card = e.target.closest(".product-card");
+    const product = {
+      id: card.dataset.id,
+      name: card.querySelector("h3").textContent,
+      price: parseFloat(card.querySelector(".price").textContent.replace("kr", "").trim()),
+      image: card.querySelector("img").src,
+    };
+    await addToCart(product);
+  }
+});
 
 
 
@@ -64,7 +64,7 @@ async function loadCart() {
 async function addToCart(product) {
   if (!currentUser) return alert("You must be logged in to add items!");
 
-  const existing = cart.find(item => item.product_id === product.id);
+  const existing = cart.find(item => Number(item.product_id) === Number(product.id));
   if (existing) {
     existing.quantity++;
     await supabaseClient.from("Cart").update({ quantity: existing.quantity }).eq("id", existing.id);

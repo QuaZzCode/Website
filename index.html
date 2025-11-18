@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="assets/css/navbar.css">
   <link rel="stylesheet" href="assets/css/products.css">
   <link rel="stylesheet" href="assets/css/swiper.css">
+  <link rel="stylesheet" href="assets/css/sidebar.css">
 
   <!-- Ionicons (used for cart etc.) -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -96,34 +97,59 @@
 
 
   <!-- MAIN / HERO SWIPER (your big preview swiper) -->
-  <section class="hero">
-    <div class="swiper mainSwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="images/pictures/image1.png" alt="hero 1"></div>
-        <div class="swiper-slide"><img src="images/pictures/image1.png" alt="hero 2"></div>
-        <div class="swiper-slide"><img src="images/pictures/image1.png" alt="hero 3"></div>
-        <div class="swiper-slide"><img src="images/pictures/image1.png" alt="hero 4"></div>
-        <div class="swiper-slide"><img src="images/pictures/image1.png" alt="hero 5"></div>
+<section class="hero">
+  <div class="swiper mainSwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="slide-content">
+          <div class="text">
+            <h1>Leather Keychain</h1>
+            <p>Short rectangle -></p>
+            <button>Add to cart</button>
+          </div>
+          <div class="image">
+            <img src="images/products/keychainSwiper1.png" alt="Product 1">
+          </div>
+        </div>
       </div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-      <div class="swiper-pagination"></div>
+      <div class="swiper-slide">
+        <div class="slide-content">
+          <div class="text">
+            <h1>Leather Keychain</h1>
+            <p>Medium rectangle -></p>
+            <button>Add to cart</button>
+          </div>
+          <div class="image">
+            <img src="images/products/Keychain1.png" alt="Product 2">
+          </div>
+        </div>
+      </div>
+      <!-- Add more slides here -->
     </div>
-  </section>
+
+    <!-- Navigation -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+
+    <!-- Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
 
 <!-- PRODUCTS -->
 <section class="product_container">
   <div id="products" class="products">
 
-    <article class="product-card" data-id="1">
-      <img src="images/pictures/image1.png" alt="Product 1">
+    <article class="product-card" data-id="1" data-category="rectangle">
+      <img src="images/products/Keychain1.png" alt="Product 1">
       <h3>Leather Keychain</h3>
-      <p class="desc">Handcrafted from cow leather.</p>
-      <p class="price">149 kr</p>
+      <p class="desc">Short rectangle.</p>
+      <p class="price">99kr</p>
       <button class="buy-btn">Add to cart</button>
     </article>
 
-    <article class="product-card" data-id="2">
+    <article class="product-card" data-id="2" data-category="rectangle">
       <img src="images/pictures/image1.png" alt="Product 2">
       <h3>Wooden Bracelet</h3>
       <p class="desc">Oak and leather details.</p>
@@ -131,7 +157,7 @@
       <button class="buy-btn">Add to cart</button>
     </article>
 
-    <article class="product-card" data-id="3">
+    <article class="product-card" data-id="3" data-category="rectangle">
       <img src="images/pictures/image1.png" alt="Product 3">
       <h3>Leather Tag</h3>
       <p class="desc">Stamped with our logo.</p>
@@ -166,6 +192,18 @@
   </div>
 </section>
 
+  <!-- <div id="menuArrow" class="menu-arrow">&#9664;</div>
+
+  <div id="sideMenu" class="side-menu hidden">
+    <ul>
+      <li data-category="rectangle"><a href="#products">Rectangle Fobs</a></li>
+      <li data-category="teardrop">Teardrop Fobs</li>
+      <li data-category="paddle">Paddle Fobs</li>
+      <li data-category="shield">Shield Fobs</li>
+      <li data-category="loop">Loop Fobs</li>
+      <li data-category="mini">Mini Tab Fobs</li>
+    </ul>
+  </div> -->
 
 
 
@@ -239,14 +277,14 @@
           <p class="popup-price" id="popupPrice">Price</p>
           <p class="popup-material" id="popupMaterial">Material</p>
           <p class="popup-desc" id="popupDesc">Description goes here.</p>
-          <button class="buy-btn">Buy Now</button>
+          <button class="buy-btn">Add to cart</button>
         </div>
       </div>
     </div>
   </div>
 
   
-
+  <div class="bottom"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -258,6 +296,7 @@
   <script type="module" src="assets/js/supabase-login.js"></script>
   <script type="module" src="assets/js/supabase-cart.js"></script>
   <script type="module" src="assets/js/supabase-config.js"></script>
+  <script type="module" src="assets/js/sidebar.js"></script>
 
 
   <!-- Small inline fallbacks/initializers to ensure expected elements exist (optional, can remove if app.js handles all) -->

@@ -1,0 +1,70 @@
+/* Arrow Button */
+.menu-arrow {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  padding: 12px;
+  font-size: 22px;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 0 8px rgba(0,0,0,0.15);
+  transition: 0.3s ease;
+}
+
+/* Arrow flips when menu is open */
+.menu-arrow.open {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+/* Slide-out menu */
+.side-menu {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translate(-220px, -50%);
+  width: 200px;
+  background: white;
+  padding: 20px;
+  box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+  border-radius: 0 10px 10px 0;
+  transition: 0.3s ease;
+  z-index: 999;
+}
+
+/* When visible */
+.side-menu.show {
+  transform: translate(0, -50%);
+}
+
+/* List */
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-menu li {
+  padding: 10px 0;
+  font-size: 16px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.side-menu a {
+    text-decoration: none;
+    color: black;
+}
+
+.side-menu li:hover {
+  color: #444;
+}
+
+/* Mobile tweak */
+@media (max-width: 700px) {
+  .side-menu {
+    width: 160px;
+  }
+}
