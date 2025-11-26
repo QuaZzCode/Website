@@ -22,36 +22,13 @@ const popupMaterial = document.getElementById("popupMaterial");
 const popupDesc = document.getElementById("popupDesc");
 let productSwiper;
 
-document.querySelectorAll(".product-card").forEach((card, i) => {
-  card.addEventListener("click", () => {
-    const p = productsData[i];
+document.querySelectorAll(".product-card").forEach(card => {
+  card.addEventListener("click", e => {
+    // Prevent clicks on the add-to-cart button from triggering navigation
+    if (e.target.classList.contains("buy-btn")) return;
 
-    popupTitle.textContent = p.title;
-    popupPrice.textContent = p.price;
-    popupMaterial.textContent = p.material;
-    popupDesc.textContent = p.desc;
-
-    productModal.style.display = "flex";
-
-    const wrapper = productModal.querySelector(".productSwiper .swiper-wrapper");
-    wrapper.innerHTML = "";
-    p.images.forEach(img => {
-      const slide = document.createElement("div");
-      slide.className = "swiper-slide";
-      slide.innerHTML = `<img src="${img}" alt="${p.title}">`;
-      wrapper.appendChild(slide);
-    });
-
-    if (productSwiper) productSwiper.destroy(true, true);
-
-    productSwiper = new Swiper('.productSwiper', {
-      slidesPerView: 1,
-      loop: true,
-      centeredSlides: true,
-      pagination: { el: '.swiper-pagination', clickable: true },
-      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-      autoHeight: true,
-    });
+    const productId = card.dataset.id;
+    window.location.href = `product.html?id=${productId}`; 
   });
 });
 

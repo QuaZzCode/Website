@@ -9,9 +9,10 @@ let currentUser = null;
 document.addEventListener("DOMContentLoaded", async () => {
   currentUser = await refreshUser();
   await initCartUI();
+  await loadCart();
 });
 
-async function initCartUI() {
+export async function initCartUI() {
   const cartPanel = document.getElementById("cartPanel");
   const cartArrow = document.getElementById("cartArrow");
   const cartIcon = document.getElementById("cartIcon");
@@ -50,7 +51,7 @@ document.addEventListener("click", async e => {
 
 
 // ----------------- CART FUNCTIONS -----------------
-async function loadCart() {
+export async function loadCart() {
   if (!currentUser) return;
   const { data, error } = await supabaseClient
     .from("Cart")

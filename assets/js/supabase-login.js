@@ -1,5 +1,7 @@
 // supabase-login.js
 import { supabaseClient } from './supabase-config.js';
+import { loadCart } from './supabase-cart.js';
+import {initCartUI } from './supabase-cart.js';
 
 let currentUser = null;
 
@@ -81,6 +83,8 @@ loginForm.addEventListener("submit", async e => {
 
   currentUser = data.user;
   await refreshUser();
+  await loadCart();
+  location.reload();
   closeModal(loginModal);
 });
 
@@ -89,6 +93,8 @@ logoutBtn.addEventListener("click", async () => {
   await supabaseClient.auth.signOut();
   currentUser = null;
   showLoggedOutState();
+  await loadCart();
+  
 });
 
 // ----------------- PROFILE MENU -----------------
