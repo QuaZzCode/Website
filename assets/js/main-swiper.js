@@ -1,7 +1,7 @@
 const swiper = new Swiper('.mainSwiper', {
-  slidesPerView: 1,       // one slide per page
+  slidesPerView: 2,       // one slide per page
   loop: true,
-  centeredSlides: false,   // align to left by default
+  // centeredSlides: false,   // align to left by default
   spaceBetween: 50,
   navigation: {
     nextEl: '.swiper-button-next',
@@ -11,4 +11,8 @@ const swiper = new Swiper('.mainSwiper', {
     el: '.swiper-pagination',
     clickable: true
   },
+  autoplay: {
+    delay: 5000, // 5 seconds before changing slide
+  },
+   speed: 2000,  // animation speed
 });
