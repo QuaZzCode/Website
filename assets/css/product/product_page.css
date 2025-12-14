@@ -1,0 +1,121 @@
+/* LAYOUT */
+.container {
+    display: flex;
+    justify-self: center;
+    margin-top: 10vh;
+    width: 80%;
+    height: 75vh;
+}
+
+/* PREVIEW AREA */
+.preview-area {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f4f4f4;
+}
+
+.keychain-preview {
+    position: relative;
+    width: 90%;
+    height: 90%;
+}
+
+.layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* OPTIONS PANEL */
+.options {
+    /* display: flex; */
+    width: 35%;
+    background: #fff;
+    padding: 30px;
+    border-left: 2px solid #ccc;
+}
+
+.options h2 {
+    padding-bottom: 1vh;
+}
+
+/* CATEGORY HEADER */
+.cat-header {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.cat-header p {
+    font-size: 20px;
+    margin-left: 12px;
+}
+
+.sub-options {
+    padding-left: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* COLOR SQUARES */
+.color-square {
+    width: 35px;
+    height: 35px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: 0.2s;
+}
+
+.color-square.active {
+    border-color: #2196F3;
+}
+
+/* IMAGE BUTTONS (button, shapes) */
+.icon {
+    width: 60px;
+    height: 60px;
+    padding: 5px;
+    background: #f0f0f0;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    object-fit: contain;
+}
+
+.icon.active {
+    border-color: #2196F3;
+}
+
+/* REMOVE OPTION */
+.option-remove {
+    background: #ddd;
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.text .list {
+    padding-bottom: 1vh;
+}
+
+.buy-btn { 
+    background: linear-gradient(90deg, #5c3b1e, #8b5a2b, #5c3b1e); 
+    color: #fff; 
+    border: none; 
+    border-radius: 6px; 
+    padding: 0.8rem 1.4rem; 
+    cursor: pointer; 
+}
+.buy-btn:hover {
+    background: #5c3b1e;
+}

@@ -36,17 +36,19 @@ export async function initCartUI() {
 }
 document.addEventListener("click", async e => {
   if (e.target.classList.contains("buy-btn")) {
-    e.stopPropagation();
-    const card = e.target.closest(".product-card");
+
     const product = {
-      id: card.dataset.id,
-      name: card.querySelector("h3").textContent,
-      price: parseFloat(card.querySelector(".price").textContent.replace("kr", "").trim()),
-      image: card.querySelector("img").src,
+      id: e.target.dataset.id,
+      name: e.target.dataset.name,
+      price: Number(e.target.dataset.price),
+      image: e.target.dataset.image
     };
+
     await addToCart(product);
   }
 });
+
+
 
 
 

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customizer</title>
+    <link rel="stylesheet" href="assets/css/product/product_page.css">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/body.css">
+    <link rel="stylesheet" href="assets/css/cart.css">
+    <link rel="stylesheet" href="assets/css/login.css">
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>   
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar_container">
+      <div class="logo_container">
+        <div class="navbar_logo">
+          <img src="images/Eternal_Key_UF_logo_cropped.png" alt="Eternal Key UF logo" />
+        </div>
+      </div>
+
+      <div class="navbar_toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+      <ul class="navbar_menu">
+        <li class="navbar_item"><a href="index.html" class="navbar_links">Home</a></li>
+        <li class="navbar_item"><a href="#products" class="navbar_links">Products</a></li>
+        <li class="navbar_item"><a href="" class="navbar_links">About Us</a></li>
+        <li class="navbar_item"><a href="" class="navbar_links">Contact</a></li>
+
+        <li class="navbar_item" id="signinNavItem">
+          <div class="nav-buttons">
+            <button id="authButtonLogIn" class="nav-btn login_button">Log In</button>
+            <button id="authButtonSignUp" class="nav-btn signup_button">Sign Up</button>
+          </div>
+        </li>
+
+
+                <!-- Profile section OUTSIDE menu -->
+        <div class="navbar_profile" id="navbarProfile" style="display:none;">
+          <span class="navbar_username" id="navbarUsername"></span>
+          <button id="profileButton" class="profile-btn">
+            <ion-icon name="person-circle-outline"></ion-icon>
+          </button>
+          <div id="profileMenu" class="profile-menu">
+            <p id="profileUsername"></p>
+            <button id="logoutBtn">Log Out</button>
+          </div>
+        </div>
+
+      </li>
+    </ul>
+    <li class="navbar_item cart-wrapper">
+      <div class="cart-icon" id="cartIcon">
+        <ion-icon name="cart-outline"></ion-icon>
+        <ion-icon id="cartArrow" name="chevron-down-outline" class="cart-arrow"></ion-icon>
+        <span id="cartCount">0</span>
+      </div>
+
+      <div id="cartPanel" class="cart-panel">
+        <h3>Your Cart</h3>
+        <div id="cartItems"></div>
+        <div class="cart-footer">
+          <div class="cart-total">
+            <span>Total:</span>
+            <span id="cartTotal">0 kr</span>
+          </div>
+          <button id="checkoutBtn" class="checkout-btn">Checkout</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+<div class="container">
+
+    <!-- LEFT PREVIEW -->
+    <div class="preview-area">
+        <div class="keychain-preview">
+            <img id="base-layer" src="images/small-rectangle/Base1.png" class="layer">
+            <img id="stitching-layer" class="layer">
+            <img id="button-layer" class="layer">
+            <img id="shape-layer" class="layer">
+        </div>
+    </div>
+
+    <!-- RIGHT SETTINGS -->
+    <div class="options">
+        <h2>Short leather Keychain</h2>
+
+        <!-- STITCHES -->
+        <div class="category">
+            <div class="cat-header" onclick="toggleCategory('stitches')">
+                <p>Stitches</p>
+            </div>
+
+            <div class="sub-options" id="stitches-options">
+                <!-- Color squares -->
+                <div class="color-square"
+                     style="background:rgb(82, 51, 34)"
+                     onclick="setLayer('stitching-layer','images/small-rectangle/Stitches1.png',this,'stitches')"></div>
+                     
+                <div class="color-square"
+                     style="background:rgb(0, 0, 0)"
+                     onclick="setLayer('stitching-layer','images/small-rectangle/black_stitches.png',this,'stitches')"></div>
+
+                <div class="color-square"
+                     style="background:blue"
+                     onclick="setLayer('stitching-layer','images/small-rectangle/blue_stitches.png',this,'stitches')"></div>
+
+                <div class="color-square"
+                     style="background:red"
+                     onclick="setLayer('stitching-layer','images/small-rectangle/red_stitches.png',this,'stitches')"></div>
+                     
+                <div class="color-square"
+                     style="background:rgb(195, 0, 255)"
+                     onclick="setLayer('stitching-layer','images/small-rectangle/purple_stitches.png',this,'stitches')"></div>
+
+            </div>
+        </div>
+
+
+        <!-- BUTTON -->
+        <div class="category">
+            <div class="cat-header" onclick="toggleCategory('button')">
+                <p>Button</p>
+            </div>
+
+              <div class="sub-options" id="button-options">
+
+                  <!-- Brown -->
+                  <div class="color-square"
+                      style="background:#7b4a2f;"
+                      onclick="setLayer('button-layer','images/small-rectangle/Button1.png',this,'button')">
+                  </div>
+                  <!-- Black -->
+                  <div class="color-square"
+                      style="background:#000000;"
+                      onclick="setLayer('button-layer','images/small-rectangle/black_button.png',this,'button')">
+                  </div>
+
+                  <!-- Silver -->
+                  <div class="color-square"
+                      style="background:#dfdfdf;"
+                      onclick="setLayer('button-layer','images/small-rectangle/silver_button.png',this,'button')">
+                  </div>
+                  <!-- Gold -->
+                  <div class="color-square"
+                      style="background:#e2cf23;"
+                      onclick="setLayer('button-layer','images/small-rectangle/gold_button.png',this,'button')">
+                  </div>
+
+              </div>
+        </div>
+
+
+        <!-- PRESSED SHAPE -->
+        <div class="category">
+            <div class="cat-header" onclick="toggleCategory('shape')">
+                <p>Pressed Shape</p>
+            </div>
+
+            <div class="sub-options" id="shape-options">
+                <img src="images/shapes/heart.png"
+                     class="icon"
+                     onclick="setLayer('shape-layer','images/shapes/heart.png',this,'shape')">
+
+                <img src="images/shapes/star.png"
+                     class="icon"
+                     onclick="setLayer('shape-layer','images/shapes/star.png',this,'shape')">
+
+                <img src="images/shapes/paw.png"
+                     class="icon"
+                     onclick="setLayer('shape-layer','images/shapes/paw.png',this,'shape')">
+            </div>
+        </div>
+
+        <div class="text">
+
+          <h3 class="list">Material:</h3>
+          <h3 class="list">Description:</h3>
+          <h3 class="list">Size:</h3>
+          
+          <button class="buy-btn">Add to cart</button>
+
+        </div>
+    </div>
+</div>
+
+ <!-- SIGNUP Modal -->
+  <div id="signupModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Create Account</h2>
+      <form id="signupForm">
+        <label for="signupUsername">Username</label>
+        <input id="signupUsername" type="text" required placeholder="Your username" />
+
+        <label for="email">Email</label>
+        <input id="email" type="email" required placeholder="you@example.com" />
+
+        <label for="password">Password</label>
+        <div class="password-wrapper">
+          <input id="password" type="password" required placeholder="At least 6 characters" />
+          <button type="button" class="toggle-password">
+            <ion-icon name="eye-outline"></ion-icon>
+          </button>
+        </div>
+
+        <button type="submit" class="signup-btn">Sign Up</button>
+        <p class="switch-text">Already have an account? <a href="#" id="loginLink">Log in</a></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- LOGIN Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Login</h2>
+      <form id="loginForm">
+        <label for="loginEmail">Email</label>
+        <input id="loginEmail" type="email" required placeholder="you@example.com" />
+
+        <label for="loginPassword">Password</label>
+        <div class="password-wrapper">
+          <input id="loginPassword" type="password" required placeholder="Your password" />
+          <button type="button" class="toggle-password">
+            <ion-icon name="eye-outline"></ion-icon>
+          </button>
+        </div>
+
+        <button type="submit" class="signup-btn">Log In</button>
+        <p class="switch-text">Don't have an account? <a href="#" id="signupLink">Sign up</a></p>
+      </form>
+    </div>
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="assets/js/product/product_page.js"></script>
+  <script type="module" src="assets/js/menu.js"></script>
+  <script type="module" src="assets/js/supabase-login.js"></script>
+  <script type="module" src="assets/js/supabase-cart.js"></script>
+  <script type="module" src="assets/js/supabase-config.js"></script>
+</body>
+</html>
