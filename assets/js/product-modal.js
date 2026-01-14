@@ -1,14 +1,22 @@
 const productsData = [
   {
     title: "Leather Keychain",
-    images: ["images/pictures/image1.png", "images/pictures/image2.png", "images/pictures/image3.png"],
+    images: [
+      "images/pictures/image1.png",
+      "images/pictures/image2.png",
+      "images/pictures/image3.png"
+    ],
     price: "149 kr",
-    material: "Materail: Genuine leather",
+    material: "Material: Genuine leather",
     desc: "Handmade keychain, durable and stylish."
   },
   {
     title: "Wooden Bracelet",
-    images: ["images/pictures/image1.png", "images/pictures/image2.png", "images/pictures/image3.png"],
+    images: [
+      "images/pictures/image1.png",
+      "images/pictures/image2.png",
+      "images/pictures/image3.png"
+    ],
     price: "199 kr",
     material: "Material: Oak wood",
     desc: "Crafted from oak, adjustable size, elegant look."
@@ -20,15 +28,21 @@ const popupTitle = document.getElementById("popupTitle");
 const popupPrice = document.getElementById("popupPrice");
 const popupMaterial = document.getElementById("popupMaterial");
 const popupDesc = document.getElementById("popupDesc");
-let productSwiper;
 
 document.querySelectorAll(".product-card").forEach(card => {
   card.addEventListener("click", e => {
-    // Prevent clicks on the add-to-cart button from triggering navigation
-    if (e.target.classList.contains("buy-btn")) return;
+    // Prevent accidental clicks on inner buttons
+    if (e.target.closest(".buy-btn")) return;
 
-    const productId = card.dataset.id;
-    window.location.href = `product.html?id=${productId}`; 
+    const productData = {
+      id: card.dataset.productId,
+      name: card.dataset.name,
+      path: card.dataset.path,
+      base: card.dataset.base
+    };
+
+    localStorage.setItem("selectedProduct", JSON.stringify(productData));
+    window.location.href = "product.html";
   });
 });
 
@@ -37,9 +51,7 @@ function closeProductModal() {
 }
 
 document.querySelectorAll(".close").forEach(btn => {
-  btn.addEventListener("click", () => {
-    closeProductModal();
-  });
+  btn.addEventListener("click", closeProductModal);
 });
 
 window.addEventListener("keydown", e => {

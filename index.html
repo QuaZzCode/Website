@@ -79,11 +79,33 @@
       <div id="cartPanel" class="cart-panel">
         <h3>Your Cart</h3>
         <div id="cartItems"></div>
-        <div class="cart-footer">
+       <div class="cart-footer">
+
+          <!-- Subtotal -->
           <div class="cart-total">
+            <span>Subtotal:</span>
+            <span id="cartSubtotal">0 kr</span>
+          </div>
+
+          <!-- Shipping -->
+          <div class="cart-total">
+            <span>Shipping (PostNord):</span>
+            <span id="cartShipping">49 kr</span>
+          </div>
+
+          <!-- Final total -->
+          <div class="cart-total final-total">
             <span>Total:</span>
             <span id="cartTotal">0 kr</span>
           </div>
+
+          <!-- Legal notice -->
+          <p class="checkout-legal">
+            By clicking “Checkout”, you agree to our
+            <a href="/terms.html" target="_blank">terms</a> and confirm that this order
+            includes a payment obligation.
+          </p>
+
           <button id="checkoutBtn" class="checkout-btn">Checkout</button>
         </div>
       </div>
@@ -164,45 +186,92 @@
 <section class="product_container">
   <div id="products" class="products">
 
-    <article class="product-card" data-id="1" onclick="openProduct('keychain1')">
+    <article class="product-card" data-id="1"
+        data-product-id="small-rectangle"
+        data-name="Short Leather Keychain"
+        data-path="images/small-rectangle"
+        data-base="images/small-rectangle/base.png">
+
         <img src="images/products/short-rectangle.png" alt="Product 1">
         <div class="text">
           <h3>Leather Keychain</h3>
           <p class="desc">Short rectangle.</p>
           <p class="price">99kr</p>
           <button 
-          class="buy-btn" 
-          data-id="1" 
-          data-name="Short Leather Keychain"
-          data-price="99"
-          data-image="images/products/small-rectangle/Base1.png">
-          Add to Cart
+            class="buy-btn" 
+            data-id="1" 
+            data-name="Short Leather Keychain"
+            data-price="99"
+            data-image="images/products/small-rectangle/Base1.png">
+            Click to edit
         </button>
         </div>
     </article>
 
-    <article class="product-card" data-id="2" data-category="rectangle">
-      <img src="images/products/rectangle-medium.png" alt="Product 2">
-      <h3>Leather Keychain</h3>
-      <p class="desc">Medium rectangle.</p>
-      <p class="price">99 kr</p>
-      <button class="buy-btn">Add to cart</button>
+    <article class="product-card" data-id="2"
+        data-product-id="medium-rectangle"
+        data-name="Short Leather Keychain"
+        data-path="images/medium-rectangle"
+        data-base="images/medium-rectangle/base.png">
+
+        <img src="images/products/rectangle-medium.png" alt="Product 2">
+        <div class="text">
+          <h3>Leather Keychain</h3>
+          <p class="desc">medium rectangle.</p>
+          <p class="price">99kr</p>
+          <button 
+            class="buy-btn" 
+            data-id="2" 
+            data-name="medium Leather Keychain"
+            data-price="99"
+            data-image="images/products/medium-rectangle/Base1.png">
+            Click to edit
+        </button>
+        </div>
     </article>
 
-    <article class="product-card" data-id="3" data-category="rectangle">
-      <img src="images/products/rectangle-long.png" alt="Product 3">
-      <h3>Leather Keychain</h3>
-      <p class="desc">Long rextangle.</p>
-      <p class="price">99 kr</p>
-      <button class="buy-btn">Add to cart</button>
+    <article class="product-card" data-id="3"
+        data-product-id="long-rectangle"
+        data-name="Short Leather Keychain"
+        data-path="images/long-rectangle"
+        data-base="images/long-rectangle/base.png">
+
+        <img src="images/products/rectangle-long.png" alt="Product 3">
+        <div class="text">
+          <h3>Leather Keychain</h3>
+          <p class="desc">long rectangle.</p>
+          <p class="price">99kr</p>
+          <button 
+            class="buy-btn" 
+            data-id="3" 
+            data-name="long Leather Keychain"
+            data-price="99"
+            data-image="images/products/long-rectangle/Base1.png">
+            Click to edit
+        </button>
+        </div>
     </article>
 
-    <article class="product-card" data-id="4">
-      <img src="images/products/tear-drop.png" alt="Product 4">
-      <h3>Leather Keychain</h3>
-      <p class="desc">Raindrop.</p>
-      <p class="price">99 kr</p>
-      <button class="buy-btn">Add to cart</button>
+    <article class="product-card" data-id="4"
+        data-product-id="raindrop"
+        data-name="Short Leather Keychain"
+        data-path="images/tear-drop"
+        data-base="images/tear-drop/base.png">
+
+        <img src="images/products/tear-drop.png" alt="Product 4">
+        <div class="text">
+          <h3>Leather Keychain</h3>
+          <p class="desc">Raindrop.</p>
+          <p class="price">99kr</p>
+          <button 
+            class="buy-btn" 
+            data-id="4" 
+            data-name="Raindrop Leather Keychain"
+            data-price="99"
+            data-image="images/products/tear-drop/Base1.png">
+            Click to edit
+        </button>
+        </div>
     </article>
 
     <article class="product-card" data-id="5">
@@ -210,7 +279,7 @@
       <h3>Leather Keychain</h3>
       <p class="desc">Round.</p>
       <p class="price">99 kr</p>
-      <button class="buy-btn">Add to cart</button>
+      <button class="buy-btn">Click to edit</button>
     </article>
 
     <article class="product-card" data-id="6">
@@ -218,23 +287,39 @@
       <h3>Leather Keychain</h3>
       <p class="desc">Sharp rounded.</p>
       <p class="price">99 kr</p>
-      <button class="buy-btn">Add to cart</button>
+      <button class="buy-btn">Click to edit</button>
     </article>
-    <article class="product-card" data-id="7">
-      <img src="images/products/round-sharp.png" alt="Product 7">
-      <div class="text">
+
+
+    <article class="product-card" data-id="7"
+        data-product-id="medium-rectangle"
+        data-name="Short Leather Keychain"
+        data-path="images/short-sharp"
+        data-base="images/short-sharp/base.png">
+
+        <img src="images/products/round-sharp.png" alt="Product 7">
+        <div class="text">
           <h3>Leather Keychain</h3>
-          <p class="desc">Short sharp.</p>
-          <p class="price">99 kr</p>
-          <button class="buy-btn">Add to cart</button>
-      </div>
+          <p class="desc">short sharp.</p>
+          <p class="price">99kr</p>
+          <button 
+            class="buy-btn" 
+            data-id="7" 
+            data-name="short sharp"
+            data-price="99"
+            data-image="images/products/short-sharp/Base1.png">
+            Click to edit
+        </button>
+        </div>
     </article>
+
+
     <article class="product-card" data-id="8">
       <img src="images/products/thick-rounded-rectangle.png" alt="Product 8">
       <h3>Leather Keychain</h3>
       <p class="desc">Thick rounded rectangle.</p>
       <p class="price">99 kr</p>
-      <button class="buy-btn">Add to cart</button>
+      <button class="buy-btn">Click to edit</button>
     </article>
     <!-- <article class="product-card" data-id="9">
       <img src="images/products/thin-rounded-rectangle.png" alt="Product 9">
@@ -308,9 +393,9 @@
   <script type="module" src="assets/js/main-swiper.js"></script>
   <script type="module" src="assets/js/menu.js"></script>
   <script type="module" src="assets/js/product-modal.js"></script>
+  <script type="module" src="assets/js/supabase-config.js"></script>
   <script type="module" src="assets/js/supabase-login.js"></script>
   <script type="module" src="assets/js/supabase-cart.js"></script>
-  <script type="module" src="assets/js/supabase-config.js"></script>
 
 
   <!-- Small inline fallbacks/initializers to ensure expected elements exist (optional, can remove if app.js handles all) -->

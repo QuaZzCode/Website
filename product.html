@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customizer</title>
-    <link rel="stylesheet" href="assets/css/product/product_page.css">
-    <link rel="stylesheet" href="assets/css/navbar.css">
-    <link rel="stylesheet" href="assets/css/body.css">
-    <link rel="stylesheet" href="assets/css/cart.css">
-    <link rel="stylesheet" href="assets/css/login.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leather Keychain Customizer</title>
 
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/body.css">
+  <link rel="stylesheet" href="assets/css/cart.css">
+  <link rel="stylesheet" href="assets/css/login.css">
+  <link rel="stylesheet" href="assets/css/navbar.css">
+  <link rel="stylesheet" href="assets/css/product/product_page.css">
+
+  <!-- Ionicons -->
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>   
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
+
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="navbar_container">
       <div class="logo_container">
         <div class="navbar_logo">
-          <img src="images/Eternal_Key_UF_logo_cropped.png" alt="Eternal Key UF logo" />
+          <img src="images/Eternal_Key_UF_logo_cropped.png" alt="Eternal Key UF logo">
         </div>
       </div>
 
@@ -42,8 +46,7 @@
           </div>
         </li>
 
-
-                <!-- Profile section OUTSIDE menu -->
+        <!-- Profile section -->
         <div class="navbar_profile" id="navbarProfile" style="display:none;">
           <span class="navbar_username" id="navbarUsername"></span>
           <button id="profileButton" class="profile-btn">
@@ -55,9 +58,8 @@
           </div>
         </div>
 
-      </li>
-    </ul>
-    <li class="navbar_item cart-wrapper">
+      </ul>
+       <li class="navbar_item cart-wrapper">
       <div class="cart-icon" id="cartIcon">
         <ion-icon name="cart-outline"></ion-icon>
         <ion-icon id="cartArrow" name="chevron-down-outline" class="cart-arrow"></ion-icon>
@@ -67,133 +69,121 @@
       <div id="cartPanel" class="cart-panel">
         <h3>Your Cart</h3>
         <div id="cartItems"></div>
-        <div class="cart-footer">
+       <div class="cart-footer">
+
+          <!-- Subtotal -->
           <div class="cart-total">
+            <span>Subtotal:</span>
+            <span id="cartSubtotal">0 kr</span>
+          </div>
+
+          <!-- Shipping -->
+          <div class="cart-total">
+            <span>Shipping (PostNord):</span>
+            <span id="cartShipping">49 kr</span>
+          </div>
+
+          <!-- Final total -->
+          <div class="cart-total final-total">
             <span>Total:</span>
             <span id="cartTotal">0 kr</span>
           </div>
+
+          <!-- Legal notice -->
+          <p class="checkout-legal">
+            By clicking “Checkout”, you agree to our
+            <a href="/terms.html" target="_blank">terms</a> and confirm that this order
+            includes a payment obligation.
+          </p>
+
           <button id="checkoutBtn" class="checkout-btn">Checkout</button>
         </div>
       </div>
     </div>
+    </div>
   </nav>
 
-<div class="container">
+  <!-- CUSTOMIZER -->
+  <div class="container">
 
-    <!-- LEFT PREVIEW -->
-    <div class="preview-area">
-        <div class="keychain-preview">
-            <img id="base-layer" src="images/small-rectangle/Base1.png" class="layer">
-            <img id="stitching-layer" class="layer">
-            <img id="button-layer" class="layer">
-            <img id="shape-layer" class="layer">
-        </div>
+  <!-- PREVIEW -->
+  <div class="preview-area">
+      <button id="flip-btn" class="flip-btn">
+    <ion-icon name="reload-outline"></ion-icon>
+  </button>
+    <div class="keychain-preview">
+      <img id="base-layer" class="layer">
+      <img id="leather-layer" class="layer">
+      <img id="stitch-layer" class="layer">
+      <img id="button-layer" class="layer">
+      <img id="shape-layer" class="layer">
+    </div>
+  </div>
+
+  <!-- OPTIONS -->
+  <div class="options">
+    <h2>Leather Keychain</h2>
+
+    <!-- LEATHER -->
+    <div class="category">
+      <p>Leather</p>
+      <div class="sub-options" id="Leather-options">
+        <div class="color-square" style="background:#3d2d17" data-option="leather" data-value="brown"></div>
+        <div class="color-square" style="background:#fff" data-option="leather" data-value="white"></div>
+        <div class="color-square" style="background:#000" data-option="leather" data-value="black"></div>
+
+      </div>
     </div>
 
-    <!-- RIGHT SETTINGS -->
-    <div class="options">
-        <h2>Short leather Keychain</h2>
+    <!-- STITCHES -->
+    <div class="category">
+      <p>Stitches</p>
+      <div class="sub-options" id="stitch-options">
+        <div class="color-square" style="background:#3d2d17" data-option="stitch" data-value="brown"></div>
+        <div class="color-square" style="background:#fff" data-option="stitch" data-value="white"></div>
+        <div class="color-square" style="background:red" data-option="stitch" data-value="red"></div>
+        <div class="color-square" style="background:blue" data-option="stitch" data-value="blue"></div>
+        <div class="color-square" style="background:purple" data-option="stitch" data-value="purple"></div>
+        <div class="color-square" style="background:pink" data-option="stitch" data-value="pink"></div>
+        <div class="color-square" style="background:black" data-option="stitch" data-value="black"></div>
 
-        <!-- STITCHES -->
-        <div class="category">
-            <div class="cat-header" onclick="toggleCategory('stitches')">
-                <p>Stitches</p>
-            </div>
-
-            <div class="sub-options" id="stitches-options">
-                <!-- Color squares -->
-                <div class="color-square"
-                     style="background:rgb(82, 51, 34)"
-                     onclick="setLayer('stitching-layer','images/small-rectangle/Stitches1.png',this,'stitches')"></div>
-                     
-                <div class="color-square"
-                     style="background:rgb(0, 0, 0)"
-                     onclick="setLayer('stitching-layer','images/small-rectangle/black_stitches.png',this,'stitches')"></div>
-
-                <div class="color-square"
-                     style="background:blue"
-                     onclick="setLayer('stitching-layer','images/small-rectangle/blue_stitches.png',this,'stitches')"></div>
-
-                <div class="color-square"
-                     style="background:red"
-                     onclick="setLayer('stitching-layer','images/small-rectangle/red_stitches.png',this,'stitches')"></div>
-                     
-                <div class="color-square"
-                     style="background:rgb(195, 0, 255)"
-                     onclick="setLayer('stitching-layer','images/small-rectangle/purple_stitches.png',this,'stitches')"></div>
-
-            </div>
-        </div>
-
-
-        <!-- BUTTON -->
-        <div class="category">
-            <div class="cat-header" onclick="toggleCategory('button')">
-                <p>Button</p>
-            </div>
-
-              <div class="sub-options" id="button-options">
-
-                  <!-- Brown -->
-                  <div class="color-square"
-                      style="background:#7b4a2f;"
-                      onclick="setLayer('button-layer','images/small-rectangle/Button1.png',this,'button')">
-                  </div>
-                  <!-- Black -->
-                  <div class="color-square"
-                      style="background:#000000;"
-                      onclick="setLayer('button-layer','images/small-rectangle/black_button.png',this,'button')">
-                  </div>
-
-                  <!-- Silver -->
-                  <div class="color-square"
-                      style="background:#dfdfdf;"
-                      onclick="setLayer('button-layer','images/small-rectangle/silver_button.png',this,'button')">
-                  </div>
-                  <!-- Gold -->
-                  <div class="color-square"
-                      style="background:#e2cf23;"
-                      onclick="setLayer('button-layer','images/small-rectangle/gold_button.png',this,'button')">
-                  </div>
-
-              </div>
-        </div>
-
-
-        <!-- PRESSED SHAPE -->
-        <div class="category">
-            <div class="cat-header" onclick="toggleCategory('shape')">
-                <p>Pressed Shape</p>
-            </div>
-
-            <div class="sub-options" id="shape-options">
-                <img src="images/shapes/heart.png"
-                     class="icon"
-                     onclick="setLayer('shape-layer','images/shapes/heart.png',this,'shape')">
-
-                <img src="images/shapes/star.png"
-                     class="icon"
-                     onclick="setLayer('shape-layer','images/shapes/star.png',this,'shape')">
-
-                <img src="images/shapes/paw.png"
-                     class="icon"
-                     onclick="setLayer('shape-layer','images/shapes/paw.png',this,'shape')">
-            </div>
-        </div>
-
-        <div class="text">
-
-          <h3 class="list">Material:</h3>
-          <h3 class="list">Description:</h3>
-          <h3 class="list">Size:</h3>
-          
-          <button class="buy-btn">Add to cart</button>
-
-        </div>
+        <div class="option-price" data-price-for="stitch">+5 kr</div>
+      </div>
     </div>
+
+    <!-- BUTTONS -->
+    <div class="category">
+      <p>Button</p>
+      <div class="sub-options" id="button-options">
+        <div class="color-square" style="background:#000" data-option="button" data-value="black"></div>
+        <div class="color-square" style="background:#cfcfcf" data-option="button" data-value="silver"></div>
+        <div class="color-square" style="background:#e2cf23" data-option="button" data-value="gold"></div>
+
+        <div class="option-price" data-price-for="button">+5 kr</div>
+      </div>
+    </div>
+
+    <!-- SHAPES -->
+    <div class="category">
+      <p>Pressed Shape</p>
+      <div class="sub-options" id="shape-options">
+        <img class="icon" src="images/icons/heart.png" data-option="shape" data-value="weird">
+        <img class="icon" src="images/icons/star.png" data-option="shape" data-value="rose">
+        <img class="icon" src="images/icons/circle.png" data-option="shape" data-value="paw">
+
+        <div class="option-price" data-price-for="shape">+5 kr</div>
+      </div>
+    </div>
+
+    <div id="price-box">
+    <span id="price-value">100 kr</span>
+  </div>
+
+    <button class="buy-btn">Add to cart</button>
+  </div>
 </div>
 
- <!-- SIGNUP Modal -->
+  <!-- SIGNUP Modal -->
   <div id="signupModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
@@ -201,10 +191,8 @@
       <form id="signupForm">
         <label for="signupUsername">Username</label>
         <input id="signupUsername" type="text" required placeholder="Your username" />
-
         <label for="email">Email</label>
         <input id="email" type="email" required placeholder="you@example.com" />
-
         <label for="password">Password</label>
         <div class="password-wrapper">
           <input id="password" type="password" required placeholder="At least 6 characters" />
@@ -212,7 +200,6 @@
             <ion-icon name="eye-outline"></ion-icon>
           </button>
         </div>
-
         <button type="submit" class="signup-btn">Sign Up</button>
         <p class="switch-text">Already have an account? <a href="#" id="loginLink">Log in</a></p>
       </form>
@@ -227,7 +214,6 @@
       <form id="loginForm">
         <label for="loginEmail">Email</label>
         <input id="loginEmail" type="email" required placeholder="you@example.com" />
-
         <label for="loginPassword">Password</label>
         <div class="password-wrapper">
           <input id="loginPassword" type="password" required placeholder="Your password" />
@@ -235,18 +221,18 @@
             <ion-icon name="eye-outline"></ion-icon>
           </button>
         </div>
-
         <button type="submit" class="signup-btn">Log In</button>
         <p class="switch-text">Don't have an account? <a href="#" id="signupLink">Sign up</a></p>
       </form>
     </div>
   </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="assets/js/product/product_page.js"></script>
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="assets/js/product_page.js"></script>
   <script type="module" src="assets/js/menu.js"></script>
+  <script type="module" src="assets/js/supabase-config.js"></script>
   <script type="module" src="assets/js/supabase-login.js"></script>
   <script type="module" src="assets/js/supabase-cart.js"></script>
-  <script type="module" src="assets/js/supabase-config.js"></script>
 </body>
 </html>

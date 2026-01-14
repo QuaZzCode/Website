@@ -20,6 +20,11 @@
   grid-template-columns: repeat(4, minmax(220px, 250px));
 }
 
+@media screen and (max-width: 1500px) {
+  .products {
+    grid-template-columns: repeat(3, minmax(200px, 250px));
+  }
+}
 
 @media screen and (max-width: 1200px) {
   .products {
@@ -27,10 +32,10 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .products {
-    grid-template-columns: 1fr;
-    justify-items: center; /* ensures single items are centered */
+    grid-template-columns: repeat(2, minmax(120px, 200px));
+    gap: 4rem 4rem;
   }
 }
 

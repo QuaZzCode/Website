@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Checkout</title>
+  <link rel="stylesheet" href="assets/css/checkout/checkout.css" />
+</head>
+<body>
+
+  <main class="checkout-container">
+
+    <h1>Checkout</h1>
+
+    <!-- ADDRESS FORM -->
+    <form id="checkoutForm">
+
+      <h2>Delivery details</h2>
+
+      <label>
+        Full name
+        <input type="text" name="name" required />
+      </label>
+
+      <label>
+        Email
+        <input type="email" name="email" required />
+      </label>
+
+      <label>
+        Address
+        <input type="text" name="address" required />
+      </label>
+
+      <label>
+        Postal code
+        <input type="text" name="postal" required />
+      </label>
+
+      <label>
+        City
+        <input type="text" name="city" required />
+      </label>
+
+      <!-- ORDER SUMMARY -->
+      <h2>Order summary</h2>
+
+      <div id="orderItems"></div>
+
+      <div class="summary-line">
+        <span>Subtotal</span>
+        <span id="subtotal">0 kr</span>
+      </div>
+
+      <div class="summary-line">
+        <span>Shipping (PostNord)</span>
+        <span id="shipping">49 kr</span>
+      </div>
+
+      <div class="summary-line total">
+        <span>Total</span>
+        <span id="total">0 kr</span>
+      </div>
+
+      <!-- LEGAL CONFIRMATION -->
+      <p class="legal">
+        By placing this order, you agree to our
+        <a href="/terms.html" target="_blank">terms</a>
+        and confirm that this order includes a payment obligation.
+      </p>
+
+      <label class="checkbox">
+        <input type="checkbox" required />
+        I accept the terms and conditions
+      </label>
+
+      <button type="submit" class="place-order-btn">
+        Place order
+      </button>
+
+    </form>
+
+  </main>
+
+  <script src="assets/js/checkout/checkout.js"></script>
+</body>
+</html>

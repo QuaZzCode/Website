@@ -1,0 +1,80 @@
+body {
+  font-family: system-ui, sans-serif;
+  background: #f6f6f6;
+  margin: 0;
+  padding: 30px;
+}
+
+.checkout-container {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+h1, h2 {
+  margin-bottom: 10px;
+}
+
+form label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+}
+
+input {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+#orderItems {
+  margin-bottom: 10px;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+
+.summary-line.total {
+  font-weight: bold;
+  border-top: 1px dashed #ccc;
+  padding-top: 8px;
+}
+
+.legal {
+  font-size: 0.75rem;
+  color: #555;
+  margin: 12px 0;
+}
+
+.checkbox {
+  font-size: 0.8rem;
+  margin-bottom: 12px;
+}
+
+.place-order-btn {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #5c3b1e, #8b5a2b);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.place-order-btn:hover {
+  opacity: 0.95;
+}
